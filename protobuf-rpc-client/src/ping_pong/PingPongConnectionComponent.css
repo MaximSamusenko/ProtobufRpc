@@ -1,0 +1,22 @@
+.pingpong-connection-item-grid {
+    width: fit-content;
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;   
+    display: grid;
+    grid-template-columns: 170px 150px auto;
+    grid-auto-rows: 25px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.pingpong-connection-flow-right {
+    width: fit-content;    
+    margin-right: 0;
+    margin-left: auto;
+    grid-column: span 3;
+}
+
+.pingopong-connection-all-row {
+    grid-column: span 3;
+}

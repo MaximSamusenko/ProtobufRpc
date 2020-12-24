@@ -1,0 +1,11 @@
+.pingpong-main-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.pingpong-new-connection-button {
+    width: fit-content;
+    margin: 5px;
+}
