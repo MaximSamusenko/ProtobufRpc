@@ -1,4 +1,4 @@
-package com.maxsam.protobufrpcserver;
+package com.maxsam.protobuf.rpcserver;
 
 import com.google.protobuf.RpcCallback;
 import com.google.protobuf.RpcController;

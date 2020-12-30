@@ -1,7 +1,8 @@
-package com.maxsam.protobufrpcserver;
+package com.maxsam.protobuf.rpcserver;
 
 import com.google.protobuf.Service;
 import com.maxsam.pingpong.proto.PingPongService;
+import com.maxsam.protobuf.rpcserver.general.ProtoWebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -12,7 +13,7 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebSocket
 public class Configuration implements WebSocketConfigurer {
     @Autowired
-    PingPongHandler handler;
+    ProtoWebSocketHandler handler;
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {

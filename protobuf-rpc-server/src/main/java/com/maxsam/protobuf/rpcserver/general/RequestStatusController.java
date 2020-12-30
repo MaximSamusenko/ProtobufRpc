@@ -1,37 +1,24 @@
-package com.maxsam;
+package com.maxsam.protobuf.rpcserver.general;
 
 import com.google.protobuf.RpcCallback;
 import com.google.protobuf.RpcController;
-import com.maxsam.proto.RequestInfo;
+import com.maxsam.pingpong.proto.RequestInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RequestStatusController implements RpcController {
-    private static int nextRequestId;
     private final int requestId;
     private boolean failed;
     private boolean cancelled;
     private String errorText;
+    private final List<RpcCallback<Object>> onCancelCallbackList = new ArrayList<>();
 
-    private List<RpcCallback<Object>> onCancelCallbackList = new ArrayList<>();
-
-    public RequestStatusController() {
-        this(false, false, "");
-    }
-
-    public RequestStatusController(RequestInfo requestStatus) {
+    RequestStatusController(RequestInfo requestStatus) {
+        this.requestId = requestStatus.getRequestId();
         this.failed = requestStatus.getFailed();
         this.cancelled = requestStatus.getCancelled();
         this.errorText = requestStatus.getErrorText();
-        this.requestId = requestStatus.getRequestId();
-    }
-
-    public RequestStatusController(boolean failed, boolean cancelled, String errorText) {
-        this.failed = failed;
-        this.cancelled = cancelled;
-        this.errorText = errorText;
-        requestId = ++ nextRequestId;
     }
 
     public RequestInfo toRequestStatus() {

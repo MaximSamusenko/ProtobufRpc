@@ -1,4 +1,4 @@
-package com.maxsam.protobufrpcserver;
+package com.maxsam.protobuf.rpcserver.general;
 
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -20,8 +20,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class PingPongHandler extends BinaryWebSocketHandler {
-    private final Logger logger = LoggerFactory.getLogger(PingPongHandler.class);
+public class ProtoWebSocketHandler extends BinaryWebSocketHandler {
+    private final Logger logger = LoggerFactory.getLogger(ProtoWebSocketHandler.class);
 
     private final Map<String, Map<Integer, RequestStatusController>> subscriptions = new ConcurrentHashMap<>();
     private final Map<String, ConcurrentWebSocketSessionDecorator> sessions = new ConcurrentHashMap<>();
